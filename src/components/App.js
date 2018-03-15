@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Pokemon from './Pokemon';
 import Details from './Details';
 import '../App.css';
-
+import { Route, Switch } from 'react-router-dom';
 
 import pokedex from './../images/Pokedex_logo.png';
 
@@ -20,11 +20,11 @@ class App extends Component {
 
   componentDidMount () {
     for (var i = 1; i < 26; i++) {
-      fetch(`http://pokeapi.co/api/v2/pokemon/${i}/`)
+      fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`)
       .then(response => response.json())
       .then(json => {
         this.setState({
-          pokemons: this.state.pokemons.push([json])
+          pokemons: this.state.pokemons.concat([json])
         })
       });
   }
@@ -72,6 +72,10 @@ paintPokemon(){
             <input className="main__filter" placeholder="Search the Pokemon" value={this.state.valueInput} onChange={this.state.handleSearch}></input>
             {this.paintPokemon()}
           </div>
+          <Switch>
+            {/* <Route exact path='/' component={ Home } /> */}
+            <Route path='/{this.state.}' component={ Details } />
+          </Switch>
           </main>
 
         </div>

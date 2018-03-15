@@ -1,9 +1,23 @@
 import React from 'react';
 
 class Pokemon extends React.Component{
+  constructor(props){
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this)
+    this.state = {
+      visible : true
+    }
+  }
+
+  handleClick(e){
+    this.setState({
+      visible : false
+    })
+  }
   render(){
     return(
-      <div className="pokemon__container">
+      <div className="pokemon__container" onChange={this.state.handleClick}>
         <div className="pokemon__image--container">
           <img className="pokemon__image" src={this.props.image} alt= {this.props.name}/>
         </div>

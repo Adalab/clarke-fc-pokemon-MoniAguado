@@ -3,7 +3,7 @@ import React from 'react';
 class Details extends React.Component{
   render(){
     return(
-      <div></div>
+      <p onChange={this.props.handleClick}>Aloha!</p>
     )
   }
 }
