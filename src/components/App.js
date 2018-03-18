@@ -53,7 +53,8 @@ paintPokemon(){
               id = {pokemon.id}
               name = {pokemon.name}
               types = {pokemon.types.sort((typeNumber) => typeNumber.slot).map((typeNumber) => typeNumber.type.name)}
-              image={pokemon.sprites.front_default}/>
+              image={pokemon.sprites.front_default}
+              evolution = {pokemon.species}/>
           </li>
       )
       }
