@@ -32,14 +32,14 @@ class App extends Component {
 
 handleSearch(e) {
   const valueInput = e.target.value.toLowerCase();
-
   this.setState({
     inputPoke: valueInput
   })
+  console.log(e.target.value)
 }
 
 paintPokemon(){
-  let listPokemon = this.state.pokemons.filter(pokemon => pokemon.name.toLowerCase()
+  const listPokemon = this.state.pokemons.filter(pokemon => pokemon.name.toLowerCase()
   .includes(this.state.inputPoke));
 
   return(
@@ -74,8 +74,8 @@ paintPokemon(){
             {this.paintPokemon()}
           </div>
           <Switch>
-            {/* <Route exact path='/' component={ Home } /> */}
-            <Route path='/{this.state.}' component={ Details } />
+            <Route exact path='/' component={ Pokemon } />
+            <Route path='/pokemon/:id' component={ Details } />
           </Switch>
           </main>
 

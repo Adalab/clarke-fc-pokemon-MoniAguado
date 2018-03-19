@@ -1,4 +1,5 @@
 import React from 'react';
+import Details from './Details';
 
 class Pokemon extends React.Component{
   constructor(props){
